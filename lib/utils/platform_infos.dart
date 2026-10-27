@@ -63,7 +63,8 @@ abstract class PlatformInfos {
     showAboutDialog(
       context: context,
       children: [
-        Text(l10n.versionWithNumber(version)),
+        Text('${l10n.versionWithNumber(version)} 定制版'),
+        const Text('by: xiaomai'),
         TextButton.icon(
           onPressed: () => launchUrlString(AppConfig.sourceCodeUrl),
           icon: const Icon(Icons.source_outlined),
