@@ -60,7 +60,7 @@ enum AppSettings<T> {
   enableSoftLogout<bool>('chat.fluffy.enable_soft_logout', true),
   enableMatrixNativeOIDC<bool>('chat.fluffy.enable_matrix_native_oidc', true),
   presetHomeserver<String>('chat.fluffy.preset_homeserver', ''),
-  welcomeText<String>('chat.fluffy.welcome_text', '欢迎来到我们的 Matrix 服务器。Welcome to our Matrix server.'),
+  welcomeText<String>('chat.fluffy.welcome_text', '欢迎来到本聊天服务器，安全畅聊，百无禁忌。'),
   website<String>('chat.fluffy.website_url', 'https://fluffychat.im'),
   logoUrl<String>(
     'chat.fluffy.logo_url',
