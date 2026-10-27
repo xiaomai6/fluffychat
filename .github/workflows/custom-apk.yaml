@@ -1,0 +1,23 @@
+name: Custom APK
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version-file: .fvmrc
+          cache: true
+      - uses: dtolnay/rust-toolchain@stable
+      - run: flutter pub get
+      - run: flutter build apk --debug
+      - name: Create release and upload APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="custom-$(date +%Y%m%d)-run${{ github.run_number }}"
+          gh release create "$TAG" --title "Custom FluffyChat $TAG" --notes "Custom build: default homeserver matrix.openaiapi.eu.org, custom welcome text and privacy policy." "build/app/outputs/apk/debug/app-debug.apk"
