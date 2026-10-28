@@ -37,4 +37,4 @@ jobs:
         run: |
           APK="build/app/outputs/flutter-apk/app-release.apk"
           if [ ! -f "$APK" ]; then APK="$(find build -name app-release.apk | head -n 1)"; fi
-          gh release create "custom-20261028-run2" --title "Custom FluffyChat custom-20261028-run2" --notes "Custom build: default homeserver matrix.openaiapi.eu.org, custom welcome text and privacy policy." "$APK"
+          gh release create "custom-20261028-run3" --title "Custom FluffyChat custom-20261028-run3" --notes "Custom build: default homeserver matrix.openaiapi.eu.org, custom welcome text and privacy policy." "$APK"
