@@ -17,6 +17,7 @@ class IntroPage extends StatelessWidget {
   final bool isLoading, hasPresetHomeserver;
   final String? loggingInToHomeserver, welcomeText;
   final VoidCallback login;
+  final VoidCallback chooseHomeserver;
 
   const IntroPage({
     required this.isLoading,
@@ -25,6 +26,7 @@ class IntroPage extends StatelessWidget {
     required this.hasPresetHomeserver,
     required this.welcomeText,
     required this.login,
+    required this.chooseHomeserver,
   });
 
   @override
@@ -163,6 +165,13 @@ class IntroPage extends StatelessWidget {
                                 ElevatedButton(
                                   onPressed: login,
                                   child: Text(L10n.of(context).signIn),
+                                ),
+                                if (hasPresetHomeserver)
+                                  TextButton(
+                                    onPressed: chooseHomeserver,
+                                    child: Text(
+                                        L10n.of(context).changeTheHomeserver,
+                                  ),
                                 ),
 
                                 if (!hasPresetHomeserver)
