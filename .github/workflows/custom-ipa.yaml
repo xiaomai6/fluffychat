@@ -8,9 +8,11 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+      - name: Select Xcode 26.3
+        run: sudo xcode-select --switch /Applications/Xcode_26.3.app
       - uses: subosito/flutter-action@v2
         with:
           flutter-version-file: .fvmrc
