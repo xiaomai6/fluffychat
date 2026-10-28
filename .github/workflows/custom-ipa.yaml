@@ -17,6 +17,8 @@ jobs:
         with:
           flutter-version-file: .fvmrc
       - uses: dtolnay/rust-toolchain@stable
+      - name: Add Firebase messaging (matches upstream iOS job)
+        run: ./scripts/add-firebase-messaging.sh
       - name: Install dependencies
         run: flutter pub get
       - name: Build unsigned iOS app
