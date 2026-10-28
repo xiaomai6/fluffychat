@@ -113,6 +113,10 @@ class _IntroPagePresenterState extends State<IntroPagePresenter> {
     );
   }
 
+  void _chooseHomeserver() {
+    context.go('${GoRouterState.of(context).uri.path}/sign_in');
+  }
+
   @override
   Widget build(BuildContext context) {
     return IntroPage(
@@ -123,6 +127,7 @@ class _IntroPagePresenterState extends State<IntroPagePresenter> {
           ? null
           : AppSettings.welcomeText.value,
       login: _login,
+      chooseHomeserver: _chooseHomeserver,
     );
   }
 }
