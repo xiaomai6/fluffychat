@@ -59,7 +59,7 @@ enum AppSettings<T> {
   emojiSuggestionLocale<String>('emoji_suggestion_locale', ''),
   enableSoftLogout<bool>('chat.fluffy.enable_soft_logout', true),
   enableMatrixNativeOIDC<bool>('chat.fluffy.enable_matrix_native_oidc', true),
-  presetHomeserver<String>('chat.fluffy.preset_homeserver', ''),
+  presetHomeserver<String>('chat.fluffy.preset_homeserver', 'matrix.openaiapi.eu.org'),
   welcomeText<String>('chat.fluffy.welcome_text', '通过去中心化的 Matrix 网络，与世界各地的人自由交流。注重隐私保护，支持端到端加密，让安全通信变得简单、开放、触手可及。'),
   website<String>('chat.fluffy.website_url', 'https://fluffychat.im'),
   logoUrl<String>(
